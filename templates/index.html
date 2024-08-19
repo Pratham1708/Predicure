@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+
+  <!-- ICONSCOUNT CDN -->
+  <link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+  <!-- GOOGLE FONTS (MONTSERRAT) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <!-- STYLESHEET -->
+  <link rel="stylesheet" href="{{url_for('static',filename='css/styles.css')}}">
+</head>
+
+<body>
+
+  <nav>
+    <div class="container nav__container" style="justify-content: space-evenly;">
+      <a href="#home">
+        <img src="{{url_for('static',filename='img/logo.PNG')}}" style="background-size: contain; height: 75px; width: 75px; border-radius: 50%;">
+      </a>
+      <a href="#home"><h4>PrediCure</h4></a>
+      <ul class="nav__menu">
+        <li><input type="text" id="search-box" placeholder="Search"></li>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#container">About</a></li>
+        <li><a href="#obe">Obesity</a></li>
+        <li><a href="#dia">Diabetes</a></li>
+        <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+      <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+    </div>
+  </nav>
+  <!-- =============================== END OF NAVBAR ============================================================== -->
+
+
+
+  <header>
+    <div class="container header__container" id="home">
+      <div class="header__left">
+        <h1>Your <strong>better health</strong> <br>       is our <strong>goal.</strong></h1>
+        <p>Predict diabetes and obesity risk - anytime, anywhere.<br> Get a personalized diet plan too!</p>
+        <a href="home.html" class="btn btn-primary">Get Started</a>
+      </div>
+      <div class="header__right">
+        <div class="header_right_image">
+          <img src="{{url_for('static',filename='img/medical-banner-with-stethoscope-min.png')}}" class="xyz" alt="header_Image">
+        </div>
+      </div>
+    </div>
+  </header>
+  <!-- =============================== END OF HEADER ============================================================== -->
+
+
+  <section class="categories" id="container">
+    <div class="container categories__container">
+      <div class="categories__left">
+        <h1>About Us</h1>
+        <h3>We're making healthcare <br>simpler!</h3><p>
+          Get initial health predictions through<br> our interactive system, designed for<br> a smooth and convenient experience, <br>on-site or online.
+        </p>
+        <a href="about.html" class="btn">Learn More</a>
+      </div>
+
+      <!--<div class=" categories__right">
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-bitcoin-circle"></i></span>
+          <h5>Blockchain</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-palette"></i></span>
+          <h5>Graphics Design</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-usd-circle"></i></span>
+          <h5>Finance</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-megaphone"></i></span>
+          <h5>Marketing</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-music"></i></span>
+          <h5>Music</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+        <article class="category">
+          <span class="category__icon"><i class="uil uil-puzzle-piece"></i></span>
+          <h5>Business</h5>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eum, tempora?</p>
+        </article>
+
+      </div>-->
+      <div class="header__right">
+        <div class="header_right_image">
+          <img src="{{url_for('static',filename='img/young-handsome-physician-medical-robe-with-stethoscope-min.png')}}" class="xyz" alt="About-Image" style="height: 450px; width: 450px; border-radius: 50%; margin-left: 200px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================================ END OF CATEGORIES ============================================ -->
+
+
+  <section class="courses">
+    <h2>Make Predictions</h2>
+    <div class="container courses__container">
+      <article class="course" id="obe">
+        <div class="course__img">
+          <img src="{{url_for('static',filename='img/disappointed-guy-need-lose-weight-showing-fat-belly-min.png')}}" alt="">
+        </div>
+        <div class="course__info">
+          <h1>Obesity</h1>
+          <p>Obesity, an excess of body fat, raises health risks and is often linked to diet and exercise habits.</p>
+          <a href="obesity_imp.html" class="btn btn-primary">Learn More</a>
+        </div>
+      </article>
+
+      <article class="course" id="dia">
+        <div class="course__img">
+          <img src="{{url_for('static',filename='img/closeup-shot-doctor-with-rubber-gloves-taking-blood-test-from-patient-min.png')}}" alt="">
+        </div>
+        <div class="course__info">
+          <h1>Diabetes</h1>
+          <p>
+            Diabetes disrupts your body's sugar management, requiring careful monitoring or insulin for control.</p>
+          <a href="diabetes_imp.html" class="btn btn-primary">Learn More</a>
+        </div>
+      </article>
+
+      <!--<article class="course">
+        <div class="course__img">
+          <img src="./images/course_img3.jpg" alt="">
+        </div>
+        <div class="course__info">
+          <h4>Lorem ipsum dolor sit amet.</h4>
+          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima odio illum amet doloremque maiores voluptatem sint!</p>
+          <a href="courses.html" class="btn btn-primary">Learn More</a>
+        </div>
+      </article>-->
+    </div>
+  </section>
+
+  <!-- ================================ END OF COURSES ============================================ -->
+
+
+
+  <section class="faqs">
+    <h2>Frequently Asked Question</h2>
+    <div class="container faqs__container">
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>What causes obesity?</h4>
+          <p>Obesity is caused by a complex interplay of factors, including genetics, environment, and lifestyle choices. Genetics can make some people more susceptible to weight gain, but environment and lifestyle play a major role. Consuming more calories than you burn, especially from unhealthy processed foods and sugary drinks, and a lack of physical activity are significant contributors to obesity. </p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>What is diabetes?</h4>
+          <p>Diabetes is a chronic condition where your body struggles to regulate blood sugar (glucose) levels. Normally, your body uses insulin, a hormone, to unlock cells and allow glucose in for energy. In diabetes, either the body doesn't produce enough insulin (type 1) or the cells become resistant to it (type 2).</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>Is obesity a disease?</h4>
+          <p>The World Health Organization (WHO) recognizes obesity as a chronic disease. Obesity can lead to a number of other health problems, including type 2 diabetes, heart disease, stroke, certain cancers, and sleep apnea.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>What are the symptoms of diabetes?</h4>
+          <p>Early symptoms can be subtle, but may include frequent urination, increased thirst, excessive hunger, unexplained weight loss, fatigue, blurry vision, and slow-healing wounds.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>How can I tell if I am obese?</h4>
+          <p>There are a few ways to determine if you are obese. The most common method is to calculate your body mass index (BMI). BMI is a measure of weight relative to height. A BMI of 25 to 29.9 is considered overweight, and a BMI of 30 or greater is considered obese. However, BMI is not a perfect measure, and it may not be accurate for everyone, such as people with a lot of muscle mass. It's important to talk to your doctor about your weight and health concerns.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>Are there different types of diabetes? </h4>
+          <p><b>Type 1 diabetes:</b> An autoimmune disease where the body attacks insulin-producing cells. It typically appears in childhood or young adulthood.<br>
+            <b>Type 2 diabetes:</b> The most common type, where the body either doesn't make enough insulin or cells resist its effects. It often develops in adulthood, but can occur at any age.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>What are the treatments for obesity?</h4>
+          <p>In addition to lifestyle changes, there are a number of treatments available for obesity, including medications and surgery. Medications can help to suppress appetite or block fat absorption. Surgery, such as bariatric surgery, can be an option for people with severe obesity who have not been successful with lifestyle changes. It's important to talk to your doctor about the best treatment options for you.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>How is diabetes treated?</h4>
+          <p>Treatment depends on the type and severity. It often involves a combination of healthy eating, regular exercise, blood sugar monitoring, and medication. In some cases, insulin injections may be needed.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>How can I lose weight if I am obese?</h4>
+          <p>There is no one-size-fits-all answer to this question. However, the most effective way to lose weight and keep it off is to make gradual, sustainable changes to your diet and exercise habits. Aim to eat a healthy diet that is low in processed foods and sugary drinks, and focus on whole grains, fruits, vegetables, and lean protein. Aim for at least 150 minutes of moderate-intensity exercise or 75 minutes of vigorous-intensity exercise per week.</p>
+        </div>
+      </article>
+
+      <article class="faq">
+        <div class="faq__icon"><i class="uil uil-plus"></i></div>
+        <div class="question__answer">
+          <h4>Can diabetes be prevented?</h4>
+          <p>Type 1 diabetes cannot be prevented. However, type 2 diabetes can often be prevented or delayed through healthy lifestyle choices, including maintaining a healthy weight, eating a balanced diet, and getting regular exercise.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ===================================   END Of FAQs  =========================================================================== -->
+
+
+<footer>
+  <div class="container footer__container">
+    <div class="footer__1">
+      <a href="index.html" class="footer_logo"><h4>PrediCure</h4></a>
+      <p>PrediCure takes aim at preventing major diseases like obesity and diabetes before they start. It does this by analyzing your health data and creating personalized plans to keep you on the right track.</p>
+    </div>
+
+    <div class="footer__2">
+       <h4>Links</h4>  <!-- == permalinks -->
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="obesity_imp.html">Obesity</a></li>
+        <li><a href="diabetes_imp.html">Diabetes</a></li>
+        <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__3">
+      <h4>Privacy</h4>
+      <ul class="privacy">
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Terms and Conditions</a></li>
+        <li><a href="">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__4">
+      <h4>Contact</h4>
+      <div>
+        <p>+91 2541657854</p>
+        <p>ra@gmail.com</p>
+      </div>
+
+      <ul class="footer__socials">
+        <li>
+          <a href=""><i class="uil uil-facebook"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-instagram"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-twitter"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <p>All right Reserved &#169; PrediCure,2024</p>
+</footer>
+
+<!-- ==========================================  END of FOOTER =================================== -->
+
+
+  <script src="{{url_for('static',filename='main.js')}}" charset="utf-8"></script>
+
+</body>
+
+</html>

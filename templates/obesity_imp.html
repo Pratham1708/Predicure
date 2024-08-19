@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Obesity</title>
+    <style>
+      .img{
+          display: flex;
+          flex-direction: row;
+          margin: auto;
+          padding: auto;
+      }
+  </style>
+<!-- ICONSCOUNT CDN -->
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+
+<!-- GOOGLE FONTS (MONTSERRAT) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- STYLESHEET -->
+<link rel="stylesheet" href="{{url_for('static',filename='css/obesity.css')}}">
+</head>
+<body>
+    <nav>
+        <div class="container nav__container" style="justify-content: space-evenly;">
+          <a href="index.html">
+            <img src="{{url_for('static',filename='img/logo.PNG')}}" style="background-size: contain; height: 75px; width: 75px; border-radius: 50%;">
+          </a>
+          <a href="index.html"><h4>PrediCure</h4></a>
+          <ul class="nav__menu">
+            <li><input type="text" id="search-box" placeholder="Search"></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="#">Obesity</a></li>
+            <li><a href="diabetes_imp.html">Diabetes</a></li>
+            <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+            <li><a href="help.html">Help</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+          <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+          <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+        </div>
+      </nav>
+      <!-- =============================== END OF NAVBAR ============================================================== -->
+      <!-- =======================================START OF SLIDER ============================-->
+      <div class="slideshow-container">
+
+        <!-- Full-width images with number and caption text -->
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{{url_for('static',filename='img/woman-white-tshirt-holds-yellow-centimeter-tape-her-hands-min.png')}}" class="img" style="width:50%">
+          <div class="text"></div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{{url_for('static',filename='img/young-sports-man-hiding-face-weight-scales-min.png')}}" class="img" style="width:50%">
+          <div class="text"></div>
+        </div>
+      
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img src="{{url_for('static',filename='img/65Z_2112.w012.n001.20A.p20.20-min.png')}}" class="img" style="width:50%">
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+            <div class="numbertext"></div>
+            <img src="{{url_for('static',filename='img/overweight-man-shrt-is-small-him-with-huge-belly-open-buttons-min.png')}}" class="img" style="width:50%">
+            <div class="text"></div>
+          </div>
+
+        <!-- Next and previous buttons -->
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+      </div>
+      <br>
+      
+      <!-- The dots/circles -->
+      <div style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+        <span class="dot" onclick="currentSlide(4)"></span>
+      </div>      
+        <!-- ========================================== END OF SLIDER ========================================-->  
+        <!-- ========================================== START OF MAIN ========================================-->
+        <div class="main">
+          <div><h1 style="text-align: center;">Understanding Obesity: A Public Health Challenge</h1></div><br><br>
+          <div class="left-main">
+            <p>Obesity is a growing public health concern, affecting millions worldwide. Obesity is no longer a whisper; it's a roar echoing through the halls of public health. Defined by a Body Mass Index (BMI) of 30 or higher, obesity has transcended individual concerns and become a global challenge.  The sheer number of people affected is staggering – over 1 billion adults worldwide are classified as obese, impacting roughly 1 in 8 adults [WHO]. It's more than just extra weight; it's a complex medical condition characterized by an excessive amount of body fat that can negatively impact health. While often perceived as simply a weight issue, it's a complex interplay between various factors.</p><br>
+            <p>This problem isn't static. Rates have more than doubled since 1990, with a concerning rise in children and adolescents. Over 390 million children and adolescents are overweight or obese, painting a worrying picture for future generations. But what makes obesity such a public health threat? It's not simply about aesthetics. Obesity is a complex condition with roots extending far beyond diet and exercise. Genetics, environment, socioeconomic status, sleep patterns, and even psychological factors can all play a role. This complexity dismantles the misconception of obesity as a personal failing. It's a medical condition with a multitude of contributing factors.</p><br>
+            <p>The consequences of unaddressed obesity are dire. It's a major risk factor for a multitude of chronic diseases, including type 2 diabetes, heart disease, stroke, and even certain cancers. This translates to a significant burden on healthcare systems, with costs skyrocketing due to treating these preventable conditions.
+             So, what can we do? The answer lies in prevention. Public health initiatives need to champion healthy lifestyles and create supportive environments. This means ensuring access to healthy food options, providing safe spaces for physical activity, and addressing the social determinants of health that can limit access to these resources.</p><br>
+             <p>The fight against obesity requires a holistic approach. We need to promote healthy eating habits, encourage regular physical activity, and equip people with stress management techniques. Additionally, ensuring access to healthcare resources is crucial in providing personalized guidance and support.
+
+              Understanding obesity is the first step towards tackling this global challenge. By addressing the root causes and promoting preventive measures, we can pave the way for a healthier future for all.</p>
+              <br><h3>Take a short (5 min) survey to see if you might be at risk for <b>OBESITY</b>.<br><br> Click the link below!</h3>
+          </div><br>
+          
+          <div class="right-main" style="display: flex; justify-content: center;"><a href="obesity_form.html" class="btn btn-primary">START PREDICTION</a>
+        </div></div>
+        <!-- ========================================== END OF MAIN ========================================--> 
+        <!-- ==========================================  START of FOOTER =================================== -->
+    <footer>
+        <div class="container footer__container">
+          <div class="footer__1">
+            <a href="index.html" class="footer_logo"><h4>PrediCure</h4></a>
+            <p>PrediCure takes aim at preventing major diseases like obesity and diabetes before they start. It does this by analyzing your health data and creating personalized plans to keep you on the right track.</p>
+          </div>
+      
+          <div class="footer__2">
+             <h4>Links</h4>  <!-- == permalinks -->
+            <ul class="links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="#">Obesity</a></li>
+              <li><a href="diabetes_imp.html">Diabetes</a></li>
+              <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+              <li><a href="help.html">Help</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer__3">
+            <h4>Privacy</h4>
+            <ul class="privacy">
+              <li><a href="">Privacy Policy</a></li>
+              <li><a href="">Terms and Conditions</a></li>
+              <li><a href="">Refund Policy</a></li>
+            </ul>
+          </div>
+      
+          <div class="footer__4">
+            <h4>Contact</h4>
+            <div>
+              <p>+91 2541657854</p>
+              <p>ra@gmail.com</p>
+            </div>
+      
+            <ul class="footer__socials">
+              <li>
+                <a href=""><i class="uil uil-facebook"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="uil uil-instagram"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="uil uil-twitter"></i></a>
+              </li>
+              <li>
+                <a href=""><i class="uil uil-linkedin"></i></a>
+              </li>
+            </ul>
+          </div>
+      
+        </div>
+        <p>All right Reserved &#169; PrediCure,2024</p>
+      </footer>
+      
+      <!-- ==========================================  END of FOOTER =================================== -->
+      
+      <script src="{{url_for('static',filename='style.js')}}" charset="utf-8"></script>    
+        <script src="{{url_for('static',filename='main.js')}}" charset="utf-8"></script>    
+</body>
+</html>

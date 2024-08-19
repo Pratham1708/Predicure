@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diabetes Form</title>
+  <!-- ICONSCOUNT CDN -->
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+<!-- GOOGLE FONTS (MONTSERRAT) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- STYLESHEET -->
+<link rel="stylesheet" href="{{url_for('static',filename='css/diabetes_form.css')}}" />
+<style>  h3{
+  text-align: center;
+  margin-bottom: 40px;
+  color: #777;
+ } label {
+      color: #777;
+      font-weight: bold;
+      display: block;
+    }
+</style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav__container" style="justify-content: space-evenly;">
+      <a href="index.html">
+        <img src="{{url_for('static',filename='img/logo.PNG')}}" style="background-size: contain; height: 75px; width: 75px; border-radius: 50%;">
+      </a>
+      <a href="index.html"><h4>PrediCure</h4></a>
+      <ul class="nav__menu">
+        <li><input type="text" id="search-box" placeholder="Search"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="obesity_imp.html">Obesity</a></li>
+        <li><a href="diabetes_imp.html">Diabetes</a></li>
+        <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+      <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+    </div>
+  </nav>
+  <!-- =============================== END OF NAVBAR ============================================================== -->
+  <!--<h1>Diabetes Dataset</h1>
+  <div class="form-container">
+    <div class="form-item">
+      <label for="Pregnancies">Number of times pregnant:</label>
+      <input type="number" id="Pregnancies" name="Pregnancies" min="0" max="17" required>
+      <label for="Glucose">Plasma glucose concentration:</label>
+      <input type="number" id="Glucose" name="Glucose" min="0" max="199">
+    </div>
+
+    <div class="form-item">
+      <label for="BP">Blood Pressure (in mm Hg):</label>
+      <input type="number" id="BP" name="BP" min="0" max="122">
+      <label for="SkinThickness">Triceps skin fold thickness (mm):</label>
+      <input type="number" id="SkinThickness" name="SkinThickness">
+    </div>
+    <div class="form-item">
+      <label for="Insulin">2-Hour serum insulin (mu U/ml):</label>
+      <input type="number" id="Insulin" name="Insulin" min="0" max="846">
+      <label for="BMI">Body mass index (weight in kg/(height in m)^2:</label>
+      <input type="number" id="BMI" name="BMI"> 
+    </div>
+    <div class="form-item">
+      <label for="DiabetesPedigreeFunction">Diabetes pedigree function:</label>
+      <input type="number" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" min="0.08" max="2.42" step="0.01">
+      <label for="Age">Your Age:</label>
+      <input type="number" id="Age" name="Age"> 
+    </div>
+    
+
+    
+  </div>
+  
+  <div class="submit-container">
+    <input type="submit" value="Submit">
+  </div>
+  </form>-->
+  <!-- =============================== START OF FORM ============================================================== -->
+  <div class="cont">
+    <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small style="color: white;">Step 1</small></div>
+            <div class="step-col"><small style="color: white;">Step 2</small></div>
+            <div class="step-col"><small style="color: white;">Step 3</small></div>
+
+        </div>
+        <form action="{{url_for('submit')}}", method="POST">
+          <div class="new", id="step1">
+            <h3>DIABETES FORM</h3>
+            <label for="Age">Your Age:</label>
+            <input type="number" name="Age" placeholder="Age" required>
+            <label for="Pregnancies">Number of times pregnant:</label>
+            <input type="number" name="Pregnancies" placeholder="Pregnancies" min="0" max="17" required>
+          <label for="Glucose">Plasma glucose concentration:</label>
+          <input type="number" name="Glucose" placeholder="Glucose" min="0" max="199" required>
+            <div class="btn-box">
+                <button type="button" id="Next1">Next</button> 
+            </div>			
+          </div>
+          <div class="new", id="step2">
+            <h3>DIABETES FORM</h3>
+            <label for="BP">Blood Pressure (in mm Hg):</label>
+            <input type="number" id="BP" name="BP" min="0" max="122" placeholder="Blood Pressure" required>
+            <label for="SkinThickness">Triceps skin fold thickness (mm):</label>
+            <input type="number" id="SkinThickness" name="SkinThickness" placeholder="Skin Thickness" required>
+            <label for="Insulin">2-Hour serum insulin (mu U/ml):</label>
+            <input type="number" id="Insulin" name="Insulin" min="0" max="846" placeholder="Insulin" required>
+            <div class="btn-box">
+                <button type="button" id="Previous1">Previous</button>
+                <button type="button" id="Next2">Next</button>				 
+            </div>			
+          </div>
+          <div class="new", id="step3">  
+          <h3>DIABETES FORM</h3>
+            <label for="BMI">Body mass index (weight in kg/(height in m)^2:</label>
+      <input type="number" id="BMI" name="BMI" step="0.0001" placeholder="BMI" required>
+      <label for="DiabetesPedigreeFunction">Diabetes pedigree function:</label>
+      <input type="number" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" step="0.0001" placeholder="Diabetes Pedigree Function" required>
+            <div class="btn-box">
+                <button type="button" id="Previous2">Previous</button>
+                <button type="submit" id="submit">Submit</button>				 
+            </div>
+          </div>			
+        </form>
+
+    </div>
+    <h3>{{ prediction_text }}</h3>
+  <!-- =============================== END OF FORM ============================================================== -->
+ <!-- ==========================================  START of FOOTER =================================== -->
+ <footer>
+  <div class="container footer__container">
+    <div class="footer__1">
+      <a href="index.html" class="footer_logo"><h4>PrediCure</h4></a>
+      <p>PrediCure takes aim at preventing major diseases like obesity and diabetes before they start. It does this by analyzing your health data and creating personalized plans to keep you on the right track.</p>
+    </div>
+
+    <div class="footer__2">
+       <h4>Links</h4>  <!-- == permalinks -->
+      <ul class="links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="obesity_imp.html">Obesity</a></li>
+        <li><a href="diabetes_imp.html">Diabetes</a></li>
+        <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__3">
+      <h4>Privacy</h4>
+      <ul class="privacy">
+        <li><a href="">Privacy Policy</a></li>
+        <li><a href="">Terms and Conditions</a></li>
+        <li><a href="">Refund Policy</a></li>
+      </ul>
+    </div>
+
+    <div class="footer__4">
+      <h4>Contact</h4>
+      <div>
+        <p>+91 2541657854</p>
+        <p>ra@gmail.com</p>
+      </div>
+
+      <ul class="footer__socials">
+        <li>
+          <a href=""><i class="uil uil-facebook"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-instagram"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-twitter"></i></a>
+        </li>
+        <li>
+          <a href=""><i class="uil uil-linkedin"></i></a>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+  <p>All right Reserved &#169; PrediCure,2024</p>
+</footer>
+
+<!-- ==========================================  END of FOOTER =================================== -->
+<script src="{{url_for('static',filename='diabetes_form.js')}}" charset="utf-8"></script> 
+  <script src="{{url_for('static',filename='main.js')}}" charset="utf-8"></script>      
+  
+</body>
+
+</html>

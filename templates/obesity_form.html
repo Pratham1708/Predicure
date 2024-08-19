@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Obesity Form</title>
+    <!-- ICONSCOUNT CDN -->
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v2.1.6/css/unicons.css">
+
+<!-- GOOGLE FONTS (MONTSERRAT) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<!-- STYLESHEET -->
+<link rel="stylesheet" href="{{url_for('static',filename='css/obesity_form.css')}}" >
+<style>  h3{
+  text-align: center;
+  margin-bottom: 40px;
+  color: #777;
+}
+label {
+      color: #777;
+      font-weight: bold;
+      display: block;
+    }
+</style>
+</head>
+
+<body>
+  <nav>
+    <div class="container nav__container" style="justify-content: space-evenly;">
+      <a href="index.html">
+        <img src="{{url_for('static',filename='img/logo.PNG')}}" style="background-size: contain; height: 75px; width: 75px; border-radius: 50%;">
+      </a>
+      <a href="index.html"><h4>PrediCure</h4></a>
+      <ul class="nav__menu">
+        <li><input type="text" id="search-box" placeholder="Search"></li>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="obesity_imp.html">Obesity</a></li>
+        <li><a href="diabetes_imp.html">Diabetes</a></li>
+        <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+        <li><a href="help.html">Help</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+      <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+    </div>
+  </nav>
+  <!-- =============================== END OF NAVBAR ============================================================== -->
+  <!--<h1>Obesity Dataset</h1>
+  <div class="form-container">
+    <div class="form-item">
+      <label for="age">Your Age:</label>
+      <input type="number" id="age" name="age" min="1" max="120" required>
+      <label for="gender">Gender:</label>
+      <input list="genders" name="gender">
+      <datalist id="genders">
+        <option value="Male">
+        <option value="Female">
+      </datalist>
+    </div>
+
+    <div class="form-item">
+      <label for="height">Height (in meters):</label>
+      <input type="number" id="height" name="height" step="0.01">
+      <label for="weight">Weight (in kg):</label>
+      <input type="number" id="weight" name="weight" step="0.01">
+    </div>
+
+    <div class="form-item">
+      <label for="history">Family History with overweight:</label>
+      <input list="histories" name="history">
+      <datalist id="histories">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+      <label for="FAVC">Do you eat high caloric food frequently?:</label>
+      <input list="FAVC" name="FAVC">
+      <datalist id="FAVC">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+      <label for="MTRANS">Which transportation do you usually use?:</label>
+      <input list="MTRANS" name="MTRANS">
+      <datalist id="MTRANS">
+        <option value="Automobile">
+        <option value="Motorbike">
+        <option value="Bike">
+        <option value="Public_Transportation">
+        <option value="Walking">
+      </datalist>
+    </div>
+
+    <div class="form-item">
+      <label for="FCVC">Do you usually eat vegetables in your meals?:</label>
+      <input type="number" id="FCVC" name="FCVC">
+      <label for="NCP">How many main meals do you have daily?:</label>
+      <input type="number" id="NCP" name="NCP">
+      <label for="CAEC">Do you eat any food between meals?:</label>
+      <input list="CAEC" name="CAEC">
+      <datalist id="CAEC">
+        <option value="Sometimes">
+        <option value="Frequently">
+        <option value="Always">
+      </datalist>
+    </div>
+
+    <div class="form-item">
+      <label for="SMOKE">Do you smoke?:</label>
+      <input list="SMOKE" name="SMOKE">
+      <datalist id="SMOKE">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+      <label for="CH2O">How much water do you drink daily (in liters)?:</label>
+      <input type="number" id="CH2O" name="CH2O">
+      <label for="SCC">Do you monitor the calories you eat daily?:</label>
+      <input list="SCC" name="SCC">
+      <datalist id="SCC">
+        <option value="Yes">
+        <option value="No">
+      </datalist>
+    </div>
+
+    <div class="form-item">
+      <label for="FAF">How often do you have physical activity (in days/week)?:</label>
+      <input type="number" id="FAF" name="FAF">
+      <label for="TUE">How much time do you use technological devices daily (in hours)?:</label>
+      <input type="number" id="TUE" name="TUE">
+      <label for="CALC">How often do you drink alcohol?:</label>
+      <input list="CALC" name="CALC">
+      <datalist id="CALC">
+        <option value="Sometimes">
+        <option value="Frequently">
+        <option value="Always">
+        <option value="No">
+      </datalist>
+    </div>
+
+    
+  </div>
+  
+  <div class="submit-container">
+    <input type="submit" value="Submit">
+  </div>
+  </form>-->
+   <!-- =============================== START OF FORM ============================================================== -->
+  <div class="cont">
+    <div class="step-row">
+            <div id="progress"></div>
+            <div class="step-col"><small style="color: white;">Step 1</small></div>
+            <div class="step-col"><small style="color: white;">Step 2</small></div>
+            <div class="step-col"><small style="color: white;">Step 3</small></div>
+            <div class="step-col"><small style="color: white;">Step 4</small></div>
+
+        </div>
+        <form action="{{url_for('submit_1')}}", method="POST">
+        <div class="new", id="step1">
+            <h3>OBESITY FORM</h3>
+        <label for="gender">Gender:</label>
+        <select list="genders" name="gender" placeholder="Gender" required>
+          <option value="">--Gender--</option>
+          <option value=0>Male</option>
+          <option value=1>Female</option>
+          </select>
+        <label for="age">Your Age:</label>
+        <input type="number" id="age" name="age" min="1" max="120" placeholder="Age" required>
+        <label for="height">Height (in meters):</label>
+        <input type="number" id="height" name="height" step="0.001" placeholder="Height" required>
+        <label for="weight">Weight (in kg):</label>
+        <input type="number" id="weight" name="weight" step="0.001" placeholder="Weight" required>
+            <div class="btn-box">
+                <button type="button" id="Next1">Next</button> 
+            </div>			
+        </div>
+        
+        <div class="new", id="step2">
+            <h3>OBESITY FORM</h3>
+            <label for="history">Family History with overweight:</label>
+        <select list="histories" name="history" placeholder="Family History with overweight" required>
+          <option value="">--Family History with overweight--</option>
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+          </select>
+        <label for="FAVC">Do you eat high caloric food frequently?:</label>
+        <select list="FAVC" name="FAVC" placeholder="Do you eat high caloric food frequently" required>
+        <option value="">--Do you eat high caloric food frequently--</option>
+          <option value=1>Yes</option>
+          <option value=0>No</option>
+        </select>
+        <label for="FCVC">Do you usually eat vegetables in your meals?:</label>
+        <input type="number" id="FCVC" name="FCVC" placeholder="Do you usually eat vegetables in your meals" required>
+        <label for="NCP">How many main meals do you have daily?:</label>
+        <input type="number" id="NCP" name="NCP" placeholder="How many main meals do you have daily" required>
+      <div class="btn-box">
+                <button type="button" id="Previous1">Previous</button>
+                <button type="button" id="Next2">Next</button>				 
+            </div>			
+        </div>
+
+        <div class="new", id="step3">
+          <h3>OBESITY FORM</h3>
+          <label for="CAEC">Do you eat any food between meals?:</label>
+          <select list="CAEC" name="CAEC" placeholder="Do you eat any food between meals" required>
+            <option value="">--Do you eat any food between meals--</option>
+            <option value=1>Sometimes</option>
+            <option value=2>Frequently</option>
+            <option value=3>Always</option>
+            <option value=0>No</option>
+          </select>
+          <label for="SMOKE">Do you smoke?:</label>
+          <select list="SMOKE" name="SMOKE" placeholder="Do you smoke" required>
+            <option value="">--Do you smoke--</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+          </select>
+          <label for="CH2O">How much water do you drink daily (in liters)?:</label>
+          <input type="number" id="CH2O" name="CH2O" placeholder="How much water do you drink daily (in liters)" required>
+          <label for="SCC">Do you monitor the calories you eat daily?:</label>
+            <select list="SCC" name="SCC" placeholder="Do you monitor the calories you eat daily" required>
+            <option value="">--Do you monitor the calories you eat daily--</option>
+            <option value=1>Yes</option>
+            <option value=0>No</option>
+            </select>
+          <div class="btn-box">
+              <button type="button" id="Previous2">Previous</button>
+              <button type="button" id="Next3">Next</button> 
+          </div>			
+        </div>
+        <div class="new", id="step4">
+        <h3>OBESITY FORM</h3>
+        
+        <label for="FAF">How often do you have physical activity (in days/week)?:</label>
+        <input type="number" id="FAF" name="FAF" placeholder="How often do you have physical activity (in days/week)" required>
+        <label for="TUE">How much time do you use technological devices daily (in hours)?:</label>
+        <input type="number" id="TUE" name="TUE" placeholder="How much time do you use technological devices daily (in hours)" required>
+        <label for="CALC">How often do you drink alcohol?:</label>
+        <select list="CALC" name="CALC" placeholder="How often do you drink alcohol" required>
+        <option value="">--How often do you drink alcohol--</option>      
+          <option value=1>Sometimes</option>
+          <option value=2>Frequently</option>
+          <option value=3>Always</option>
+          <option value=0>No</option>
+        </select>
+        <label for="MTRANS">Which transportation do you usually use?:</label>
+        <select list="MTRANS" name="MTRANS" placeholder="Which transportation do you usually use" required> 
+          <option value="">--Which transportation do you usually use--</option>
+          <option value=2>Automobile</option>
+          <option value=3>Motorbike</option>
+          <option value=4>Bike</option>
+          <option value=0>Public Transportation</option>
+          <option value=1>Walking</option>
+        </select>
+        <div class="btn-box">
+            <button type="button" id="Previous3">Previous</button>
+            <button type="submit" id="submit">Submit</button>		
+            </div>			
+        </div>
+    </form>
+    </div>
+    <h3>{{ prediction_text }}</h3>
+  <!-- =============================== END OF FORM ============================================================== -->
+  <!-- ==========================================  START of FOOTER =================================== -->
+  <footer>
+    <div class="container footer__container">
+      <div class="footer__1">
+        <a href="index.html" class="footer_logo"><h4>PrediCure</h4></a>
+        <p>PrediCure takes aim at preventing major diseases like obesity and diabetes before they start. It does this by analyzing your health data and creating personalized plans to keep you on the right track.</p>
+      </div>
+  
+      <div class="footer__2">
+         <h4>Links</h4>  <!-- == permalinks -->
+        <ul class="links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="obesity_imp.html">Obesity</a></li>
+          <li><a href="diabetes_imp.html">Diabetes</a></li>
+          <li><a href="NutriGuide_imp.html">NutriGuide</a></li>
+          <li><a href="help.html">Help</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer__3">
+        <h4>Privacy</h4>
+        <ul class="privacy">
+          <li><a href="">Privacy Policy</a></li>
+          <li><a href="">Terms and Conditions</a></li>
+          <li><a href="">Refund Policy</a></li>
+        </ul>
+      </div>
+  
+      <div class="footer__4">
+        <h4>Contact</h4>
+        <div>
+          <p>+91 2541657854</p>
+          <p>ra@gmail.com</p>
+        </div>
+  
+        <ul class="footer__socials">
+          <li>
+            <a href=""><i class="uil uil-facebook"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="uil uil-instagram"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="uil uil-twitter"></i></a>
+          </li>
+          <li>
+            <a href=""><i class="uil uil-linkedin"></i></a>
+          </li>
+        </ul>
+      </div>
+  
+    </div>
+    <p>All right Reserved &#169; PrediCure,2024</p>
+  </footer>
+  
+  <!-- ==========================================  END of FOOTER =================================== -->
+  <script src="{{url_for('static',filename='obesity_form.js')}}" charset="utf-8"></script>      
+  <script src="{{url_for('static',filename='main.js')}}" charset="utf-8"></script>    
+   
+  
+</body>
+
+</html>

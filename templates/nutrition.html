@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nutrition Recommendation</title>
+</head>
+<body>
+    <h1>Nutrition Recommendation</h1>
+    
+    <div>
+        <h2>BMR: {{ bmr }}</h2>
+        <h2>Calories: {{ calories }}</h2>
+        <h2>Adjusted Nutritional Components:</h2>
+        <ul>
+            {% for component in adjusted_nutritional_components %}
+                <li>{{ component }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <h2>Food Items by Category:</h2>
+    {% for category, items in food_items_by_category.items() %}
+        <h3>{{ category }}</h3>
+        <ul>
+            {% for item in items %}
+                <li>{{ item }}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+    <script></script>
+</body>
+
+</html>

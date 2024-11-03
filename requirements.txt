@@ -3,14 +3,7 @@ flask
 flask_cors
 numpy>=1.24
 tabulate
-<<<<<<< HEAD
-random
 gunicorn
 scikit-learn
 lightgbm
 
-=======
-gunicorn
-scikit-learn
-lightgbm
->>>>>>> 7646b397325262c1eaec5d00fca7a86f5bb031e1

@@ -2,7 +2,6 @@ pandas
 flask
 flask_cors
 numpy
-pickle
 tabulate
 random
 gunicorn

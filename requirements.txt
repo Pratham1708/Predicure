@@ -6,8 +6,7 @@ numpy
 pickle
 tabulate
 random
-=======
 gunicorn
 scikit-learn
 lightgbm
->>>>>>> 70ad4ee6f713d29751075097bca93be18ff3bb3c
+

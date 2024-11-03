@@ -1,7 +1,7 @@
 pandas
 flask
 flask_cors
-numpy
+numpy>=1.24
 tabulate
 random
 gunicorn

@@ -156,39 +156,84 @@ def recommendation():
     nutritional_components = []
     for disease in user_diseases:
         row = diseases_data.loc[diseases_data['Disease'] == disease]
-        if not row.empty:
-            nutritional_components.append(list(row.iloc[:, 1:].values[0]))
+        nutritional_components.append(list(row.iloc[:, 1:].values[0]))
 
-    final_list = nutritional_components[0] if nutritional_components else []
+    final_list = nutritional_components[0]
     for components in nutritional_components[1:]:
-        final_list = [min(a, b) for a, b in zip(final_list, components)]
+        for i, value in enumerate(components):
+            final_list[i] = min(final_list[i], value)
 
     # Adjust nutritional components based on calorie intake
     original_calories = 2200
     adjusted_list = [round(value * (calories / original_calories), 2) for value in final_list]
 
-    # Categorize food items based on meal preference
-    meal_categories = {
-        'Vegetarian': ('Breakfast grains', 'Fruits', 'Vegetables', 'Protien', 'Healthy Fats','Breads','Juice','Indian bread','Tea & Coffee'),
-        'Non-vegetarian': ('Breakfast grains', 'Fruits', 'Vegetables','Non-veg Protien','Protien', 'Healthy Fats','Breads','Juice','Indian bread','Tea & Coffee')
-    }
-    food_items_by_category = {category: [] for category in meal_categories.keys()}
+    # Find food items that match the nutritional requirements
+    food_items_dict = {}
+    for i, component_value in enumerate(final_list):
+        component_name = diseases_data.columns[i+1]
+        food_items = []
+        for index, row in food.iterrows():
+            food_component_value = row[component_name]
+            if abs(float(food_component_value) - float(component_value)) / float(component_value) <= 0.90:
+                food_items.append(row['food items'])
+        food_items_dict[component_name] = food_items
 
-    for food_item in food['food items']:
-        category = calorie.loc[calorie['food items'] == food_item, 'Category'].values[0]
-        for meal_category, categories in meal_categories.items():
-            if category in categories and pre_meal == meal_category:
-                food_items_by_category.setdefault(category, []).append(food_item)
+    food_i_list = list(food_items_dict.values())
+    food_i_list = sum(food_i_list, [])
+    unique_list = list(set(food_i_list))
+
+    # Generate weekly diet chart
+    weekly_diet_charts = []
+    for week in range(3):  # Generate 3 weeks of diet charts
+        weekly_diet_chart = generate_weekly_diet_chart(pre_meal)
+        weekly_diet_charts.append(weekly_diet_chart)
 
     # Prepare response data
     response_data = {
         'bmr': bmr,
         'calories': calories,
         'adjusted_nutritional_components': adjusted_list,
-        'food_items_by_category': food_items_by_category
+        'recommended_food_items': unique_list,
+        'weekly_diet_charts': weekly_diet_charts
     }
 
     return jsonify(response_data)
+
+# Add these helper functions if they're not already in your app.py
+def get_meal_categories(pre_meal):
+    if pre_meal.lower() == 'vegetarian':
+        return {
+            'Breakfast': ['Breakfast grains', 'Fruits', 'Vegetables', 'Protein', 'Healthy Fats', 'Breads', 'Juice', 'Indian bread', 'Tea & Coffee'],
+            'Lunch': ['Grains', 'Indian bread', 'Vegetables', 'Salads', 'Healthy Fats', 'Soup', 'Dairy'],
+            'Snacks': ['Tea & Coffee', 'Sandwich', 'Nuts & Seeds', 'Fruits', 'Beverages', 'Juice'],
+            'Dinner': ['Grains', 'Indian bread', 'Vegetables', 'Salads', 'Healthy Fats', 'Soup', 'Dairy']
+        }
+    elif pre_meal.lower() == 'non-vegetarian':
+        return {
+            'Breakfast': ['Breakfast grains', 'Fruits', 'Vegetables', 'Non-veg Protein', 'Protein', 'Healthy Fats', 'Breads', 'Juice', 'Indian bread', 'Tea & Coffee'],
+            'Lunch': ['Grains', 'Indian bread', 'Vegetables', 'Salads', 'Healthy Fats', 'Soup', 'Dairy', 'Meat', 'Non-veg Salads', 'Non-veg Soup'],
+            'Snacks': ['Tea & Coffee', 'Sandwich', 'Nuts & Seeds', 'Fruits', 'Beverages', 'Juice', 'Non-veg Sandwich'],
+            'Dinner': ['Grains', 'Indian bread', 'Vegetables', 'Salads', 'Healthy Fats', 'Soup', 'Dairy', 'Meat', 'Non-veg Salads', 'Non-veg Soup']
+        }
+    else:
+        return {}
+
+def get_random_dish(meal_category, pre_meal):
+    meal_categories = get_meal_categories(pre_meal)
+    if meal_category in meal_categories:
+        return random.choice(meal_categories[meal_category])
+    return 'No Dish'
+
+def generate_weekly_diet_chart(pre_meal):
+    days_of_week = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday']
+    table = []
+    for day in days_of_week:
+        row = [day]
+        for meal in ['Breakfast', 'Lunch', 'Snacks', 'Dinner']:
+            random_dish = get_random_dish(meal, pre_meal)
+            row.append(random_dish)
+        table.append(row)
+    return table
 
 
 
